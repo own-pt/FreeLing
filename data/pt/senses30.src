@@ -1,3 +1,5 @@
+88888888-a hipossuficiente
+99999999-n ordem oab ordem_dos_advogados
 00001740-a capaz
 00001740-n ser entidade ente
 00001740-r a_capela
@@ -1129,7 +1131,7 @@
 00122273-r anticonstitucionalmente
 00122386-a preexistente
 00122427-r democraticamente
-00122626-a posterior ulterior subseqüente subsequente
+00122626-a posterior ulterior subseqüente subsequentesuperveniente
 00122661-n tiro pontaria
 00122816-r à_parte
 00122844-a anexado concomitante decorrente conseqüente resultante
@@ -1138,7 +1140,7 @@
 00123170-v variar mudar modificar alterar
 00123229-r economicamente
 00123365-r economicamente
-00123485-a posterior ulterior
+00123485-a posterior ulterior superveniente
 00123500-r economicamente
 00123582-r eletronicamente
 00123695-r etnicamente de_forma_étnica
@@ -47543,3 +47545,4 @@
 15298283-n grande_cisma_do_oriente grande_cisma_do_oriente
 15299367-n transfiguração 6_de_agosto
 15300051-n 11_de_setembro
+00063089-r mediante
