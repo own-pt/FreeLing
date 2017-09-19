@@ -1,0 +1,160 @@
+%%%%%%%%%%%%%%%%%%%%%
+%%% GENERAL
+%%%%%%%%%%%%%%%%%%%%%
+
+<Type>
+Dependencies
+</Type>
+
+%%%%%%%%%%%%%%%%%%%%%
+%%% FEATURE EXTRACTOR
+%%%%%%%%%%%%%%%%%%%%%
+
+<SemDB>
+../../semdb.dat
+</SemDB>
+
+<MinPageRank>
+0.0003
+</MinPageRank>
+
+<DepLabels>
+Apposition  ^APPO$
+Subject     ^SBJ$
+Object      ^OBJ$
+NounModifier ^NMOD$
+Predicate    ^PRD$
+Arg0         ^(A0|C-A0)$
+Arg1         ^(A1|C-A1)$
+Arg123       ^(A[123]|C-A[123])$
+</DepLabels>
+
+
+<PosTags>
+Verb ^V
+Number ^Z
+RelPron ^(WDT|WP)$
+Poss ^(PRP\$)$
+NounSg ^NN$
+NounPl ^NNS$
+ProperNoun ^NP
+NonStopWord ^[NJVR]
+NounAdj ^([NJZ]|VB[GN])
+OrganizationNE ^NP00O00$
+PersonNE ^NP00SP0$
+LocationNE ^NP00G00$
+Preposition ^IN
+</PosTags>
+
+<SemanticFeatures>
+PersonSUMO ^(Human|Male|Female)[+=]$
+
+OrganizationSUMO ^(Care|Educational|Government|Judicial|Legislative|Mercantile|Military|Nonprofit|Police|Political|Religious|Terrorist|Union)?Organization[+=]$
+
+LocationSUMO ^(Island|Park|Plain|Reef|Glacier|Hill|Room|Building|Burrow|Creek|Field|StateOrProvince|Forest|MountainRange|Lake|Valley|City|Nation|StationaryArtifact|Region|FreshWaterArea|LowlandArea|SaltWaterArea|UplandArea|SlopedArea|CultivatedLandArea|ShoreArea|StaticWaterArea|WaterArea|StreamWaterArea|GeopoliticalArea|GeographicArea|LandArea)[+=]$
+</SemanticFeatures>
+
+<WordFeatures>
+Definite     ^(the|both|my|your|his|her|its|our|their|that|this|those|these)$
+Copulative   ^be$
+Reporting    ^(say|reply|tell)$
+AcronymInfix ^(and|und|et|y|\\&|the|of)$
+AcronymSuffix ^([Cc]o|[Ii]nc|[Cc]orp|SL|sl|SA|sa|Bro(s?)|bro(s?))\\.?$ 
+</WordFeatures>
+
+%%% Pronouns and possessive particles
+%%% columns: pronoun/possesive type humanity person gender number
+%%% (type: 'I'-indefinite, 'S'-subject, 'O'-object, 'P'-possessive, 'R'-reflexive 'L'-relative 'D'-demonstrative 'X'-interrogative)
+%%% (humanity: 'h'-human, 'n'-non-human, '0'-underspecified)
+%%% (person: 1, 2, 3)
+%%% (gender: 'm'-masculine, 'f'-femenine, 'n'-neuter, 'b'-m or f, '0'-unspecified)
+%%% (number: 's'-singular, 'p'-plural, '0'-unspecified)
+<PronWords>
+% subject
+i S h1bs
+you SO h2b0
+he S h3ms
+she S h3fs
+it SO n3ns
+we S h1bp
+they S 03bp
+% object
+me O h1bs
+him O h3ms
+her OP h3fs
+us O h1bp
+'s O h1bp
+them O 03bp
+'em O 03bp
+% possessive
+my P h1bs
+mine P h1bs
+your P h2b0
+yours P h2b0
+his P h3ms
+hers P h3fs
+its P n3ns
+our P h1bp
+ours P h1bp
+their P 03bp
+theirs P 03bp
+% demonstrative
+this D n30s
+these D n30p
+that D n30s
+those D n30p
+% reflexive
+myself R h1bs
+yourself R h2bs
+himself R h3ms
+herself R h3fs
+itself R n3ns
+oneself R h3bs
+ourselves R h1bp
+yourselves R h2bp
+themselves R 03bp
+% relative and interrogative
+that L 0300
+who LX h3b0
+which LX n3n0
+whom LX h3b0
+whose LX h3b0
+what X n3n0
+% indefinite
+one I h3ns
+one's I h3ns
+each I 030s
+someone I h3bs
+somebody I h3bs
+something I n3ns
+any I n3ns
+anyone I h3bs
+anybody I h3bs
+anything I n3ns
+nobody I h3bs
+nothing I n3ns
+everyone I h3bs
+everybody I h3bs
+everything I n3ns
+both I 030p
+few I 030p
+several I 030p
+all I 0300
+some I 0300
+none I 0300
+most I 0300
+fewer I 030p
+another I 03ns
+other I 03ns
+others I 03np
+either I 030s
+enough I 030s
+less I 030s
+much I 030s
+little I 030s
+plenty I 030s
+many I 030s
+more I 030s
+most I 030s
+such I 030s
+</PronWords>

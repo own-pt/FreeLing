@@ -2,8 +2,12 @@
 %%% GENERAL
 %%%%%%%%%%%%%%%%%%%%%
 
+<Type>
+Constituents
+</Type>
+
 <Language>
-ENGLISH
+SPANISH
 </Language>
 
 %%%%%%%%%%%%%%%%%%%%%
@@ -25,90 +29,105 @@ ENGLISH
 
 %%% Labels useful to extract features
 <Labels>
-COOR_NP ^sn-coor$
-NP ^(sn|n)-chunk$
-# Pronouns: personal=PRP, relative=WP$, who/what=WP, genitive=POS
-# WDT (who-determiner) is also considered
-PRON ^WDT|WP\$?|PRP\$?$
-% Warning: filter out WPs at the beginning of the interrogative sentences
-XPRON ^WP$
+COOR_NP ^coor-n$
+NP ^sn|grup-nom
+% propouns: personal=PP, demonstrative=PD, relative=PR, indefinite=PI, interrogative=PT, possesive=PX
+% possessive determiners: DP
+PRON ^P[PDRTX]|DP
+% Warning: filter out PT at the beginning of the interrogative sentences
+XPRON ^PT
 % possessive particles
-POSS ^PRP\$|WP\$|POS$
+POSS ^PX|DP 
 
 % Proper names and Named Entities
 PN ^NP
 % Subordinate clauses
-SUB ^rel-cl$
+SUB ^relativa$
 % Colon: to detect explanatory subordinate clauses
 PC ^Fc$
 % Common names
-NC ^NN
-NCS ^NN$
-NCP ^NNS$
+NC ^NC
 % Adjectives
-ADJ ^JJ$
+ADJ ^AQ
 % Dets
-DET ^DT$
+DET ^D
 % Verbs
-VERB ^VB
+VERB ^V
 NUM ^Z
 </Labels>
 
-%%% List of some words being Determinant
+%%% List of words being Determinant
 %%% Used to compute some features
 <DetWords>
-a
-an
-the
-this
-these
-that
-those
+un
+una
+unos
+unas
+el
+la
+los
+las
+este
+esta
+ese
+esa
+esos
+esas
+aquel
+aquella
+aquellos
+aquellas
 </DetWords>
 
-%%% List of words being pronouns and possessive particles
+%%% List of words being pronouns with gender of the possible referent
 %%% columns: pronoun/possesive referent_gender person number
 %%% (referent_gender: 'm'-male, 'f'-female, 'a'-both 'n'-neutral, '-'-any
 %%% Used to compute some features
 <PronWords>
-he m 3 s
-his m 3 s
-him m 3 s
-himself m 3 s
-she f 3 s
-her f 3 s
-hers f 3 s
-herself f 3 s
-i a 1 s
-my a 1 s
-mine a 1 s
+él m 3 s
+ella f 3 s
+yo a 1 s
+tú a 2 s
+ti a 2 s
+te a 2 s
+nosotros a 1 p
+nosotras f 1 p
+vosotros a 2 p
+vosotras f 2 p
+ellos a 3 p
+ellas f 3 p
+mí a 1 s
 me a 1 s
-myself a 1 s
-we a 1 s
-us a 1 p
-our a 1 p
-ourselves a 1 p
-ours a 1 p
-you a 2 a
-your a 2 a
-yourself a 2 s
-yourselves a 2 p
-yours a 2 a
-they a 3 p
-them a 3 p
-themselves a 3 p
-theirs a 3 p
-their a 3 p
-one a 3 s
-it n 3 s
-its n 3 s
-itself n 3 s
-this - 3 s
-these - 3 p
-that - 3 a
-those - 3 p
-who a 3 a
-which - 3 a
+nos a 1 p
+os a 2 p
+vos a 2 p
+mío a 1 s
+mía a 1 s
+mios a 1 p
+mias a 1 p
+tuyo a 2 s
+tuya a 2 s
+tuyos a 2 p
+tuyas a 2 p
+suyo a 3 s
+suya a 3 s
+suyos a 3 p
+suyas a 3 p
+le a 3 s
+les a 3 p
+nuestro a 1 p
+nuestra a 1 p
+nuestros a 1 p
+nuestras a 1 p
+vuestro a 2 p
+vuestra a 2 p
+vuestros a 2 p
+vuestras a 2 p
+lo n 3 s
+ello n - s
+eso n - s
+esto n - s
+aquello n - s
 </PronWords>
 
 %%% List of semantic classes and their synsets ("-" when not necessary) and a regexp for sense-words (^$ when not necessary).

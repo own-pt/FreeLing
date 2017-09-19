@@ -1,0 +1,48 @@
+
+<Type>
+Dependencies
+</Type>
+
+<TagsetFile>
+../tagset.dat
+</TagsetFile>
+
+
+<MentionTags>
+%% Lines with format:  Tag  Funcion Type
+%% Any tree headed by 'Tag' will be a mention of type 'Type' provided it 
+%% does not have funcion 'Function' ('-' means no restrictions)
+NN    -     NounPhrase
+NNS   -     NounPhrase
+NP    -     ProperNoun
+PRP   -     Pronoun
+PRP$  -     Pronoun
+WP    -     Pronoun
+WDT   -     Pronoun
+</MentionTags>
+
+<CoordLabel>
+COORD
+</CoordLabel>
+
+<Punctuation>
+^F
+</Punctuation>
+
+<Excluded>
+what
+time
+morning
+afternoon
+evening
+night
+minute
+hour
+day
+weak
+month
+year
+today
+tommorrow
+yesterday
+</Excluded>
